@@ -15,6 +15,11 @@ then
 	done
 fi
 
+if xrandr --listmonitors | grep -q 'HDMI-'
+then
+	xrandr --output LVDS-1 --off
+fi
+
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 udiskie &
 xbindkeys
