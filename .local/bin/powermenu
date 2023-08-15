@@ -1,0 +1,19 @@
+#!/bin/bash
+
+LOCK="Trancar"
+CANCEL="Cancelar"
+REBOOT="Reiniciar"
+SHUTDOWN="Desligar"
+HIBERNATE="Suspender"
+
+options="$CANCEL\n$LOCK\n$SHUTDOWN\n$REBOOT\n$HIBERNATE"
+selected=$(echo -e $options | dmenu)
+
+case $selected in
+	"$LOCK"      ) slock             ;;
+	"$REBOOT"    ) reboot            ;;
+	"$SHUTDOWN"  ) poweroff          ;;
+	"$HIBERNATE" ) systemctl suspend ;;
+	"*"          ) exit 0            ;;
+esac
+
