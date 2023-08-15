@@ -61,9 +61,9 @@ alias mp3-dl="yt-dlp -x --audio-format mp3 --embed-thumbnail"
 
 # Text
 alias journal="~/Documentos/formats/txt/journal"
-alias todo="vim ~/Documentos/formats/text/txt/lists/todo.txt"
-alias notodo="vim ~/Documentos/formats/text/txt/lists/notodo.txt"
-alias checklist="less ~/Documentos/formats/text/txt/lists/checklist.txt"
+alias todo="nvim ~/Documentos/formats/text/txt/lists/todo.md"
+alias notodo="nvim ~/Documentos/formats/text/txt/lists/notodo.md"
+alias checklist="less ~/Documentos/formats/text/txt/lists/checklist.md"
 
 
 # Config Files
