@@ -1,0 +1,55 @@
+
+set selection-clipboard         clipboard
+set show-recent                 3
+
+set font                        "Martian Mono 11"
+
+# Biubi Color Scheme
+
+set default-bg                  "#2f2f2f"
+set default-fg                  "#adaeaa"
+
+set statusbar-bg                "#363636"
+set statusbar-fg                "#d4d4d4"
+
+set index-bg                    "#2f2f2f"
+set index-fg                    "#adaeaa"
+
+set index-active-bg             "#7cb2ea"
+set index-active-fg             "#2f2f2f"
+
+set inputbar-bg                 "#2f2f2f"
+set inputbar-fg                 "#adaeaa"
+
+set notification-bg             "#adaeaa"
+set notification-fg             "#2f2f2f"
+
+set notification-error-bg       "#e49a9e"
+set notification-error-fg       "#2f2f2f"
+
+set notification-warning-bg     "#bdae67"
+set notification-warning-fg     "#2f2f2f"
+
+set highlight-fg                "#75bc99"
+set highlight-color             "#7cb2ea"
+set highlight-active-color      "#7cb2ea"
+
+set completion-bg               "#2f2f2f"
+set completion-fg               "#7cb2ea"
+
+set completion-group-bg         "#363636"
+set completion-group-fg         "#d4d4d4"
+
+set completion-highlight-bg     "#7cb2ea"
+set completion-highlight-fg     "#2f2f2f"
+
+set render-loading-bg           "#2f2f2f"
+set render-loading              "#adaeaa"
+
+set recolor-darkcolor           "#adaeaa"
+set recolor-lightcolor          "#2f2f2f"
+
+set recolor                     true
+set recolor-keephue             false
+set recolor-reverse-video       true
+
