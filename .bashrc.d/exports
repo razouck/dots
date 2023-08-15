@@ -1,0 +1,13 @@
+
+export PATH="$HOME/.bin:$HOME/.local/bin:$PATH:/opt/dataspell/bin"
+export LESSOPEN="| /usr/bin/source-highlight-esc.sh %s"
+export LESS=" -R"
+
+# http://stackoverflow.com/questions/9457233/unlimited-bash-history
+export HISTFILESIZE=
+export HISTSIZE=
+export HISTTIMEFORMAT="[%F %T] "
+export HISTFILE=~/.bash_eternal_history
+export HISTCONTROL="erasedups:ignorespace"
+PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+

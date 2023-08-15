@@ -1,0 +1,76 @@
+
+# Safety features
+alias cp='cp -i'
+alias ln='ln -i'
+alias mv='mv -i'
+alias rm='rm -I'
+alias chgrp='chgrp --preserve-root'
+alias chmod='chmod --preserve-root'
+alias chown='chown --preserve-root'
+
+
+# Privileged Access
+if (( UID != 0))
+then
+	alias svim='sudoedit'
+fi
+
+
+# Color
+alias ip="ip -color=auto"
+alias ls="ls --color=auto"
+alias grep="grep -i --color=auto"
+
+
+# Git
+alias ga='git add'
+alias grm='git rm'
+alias gl='git log'
+alias gd='git diff'
+alias gg='git grep'
+alias gb='git branch'
+alias gc='git commit'
+alias gs='git status'
+alias gk='gitk --all'
+alias gr='git rebase'
+alias gco='git checkout'
+alias gsb='git show-branch'
+alias gcp='git cherry-pick'
+alias gri='git rebase --interactive'
+
+
+# cd
+alias jsbin="cd ~/Documentos/jsbin"
+alias repos="cd ~/Documentos/repos"
+alias cs="cd ~/Documentos/formats/txt/cs"
+alias webdev="cd ~/Documentos/formats/txt/webdev"
+alias linuxfu="cd ~/Documentos/formats/txt/linuxfu"
+
+
+# Commands
+alias df="df -h"
+alias pcmanfm="pcmanfm . &"
+alias hist="history | grep -E"
+alias install="sudo pacman -S"
+alias uinstall="sudo pacman -Rns"
+alias update="paru -Syyu && sudo flatpak update"
+alias brilho="xrandr --output LVDS-1 --brightness"
+alias bgm="mpv http://www.hbr1.com/playlist/trance.ogg.m3u"
+alias mp3-dl="yt-dlp -x --audio-format mp3 --embed-thumbnail"
+
+
+# Text
+alias journal="~/Documentos/formats/txt/journal"
+alias todo="vim ~/Documentos/formats/text/txt/lists/todo.txt"
+alias notodo="vim ~/Documentos/formats/text/txt/lists/notodo.txt"
+alias checklist="less ~/Documentos/formats/text/txt/lists/checklist.txt"
+
+
+# Config Files
+alias dots="config ls-tree -r main --name-only"
+alias nvimconf="vim ~/.config/nvim/init.lua"
+alias dunstconf="vim ~/.config/dunst/dunstrc"
+alias spectrwmconf="vim ~/.config/spectrwm/spectrwm.conf"
+alias alacrittyconf="vim ~/.config/alacritty/alacritty.yml"
+alias config='/usr/bin/git --git-dir=$HOME/.dots/ --work-tree=$HOME'
+

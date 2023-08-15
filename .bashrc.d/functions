@@ -1,0 +1,72 @@
+
+group_files()
+{
+	x=$(ls -1 | wc -l)
+	y=${1:-100}
+	z=0
+
+	if (( x % y > 0 ))
+	then
+		z=1
+	fi
+
+	x=$(( x / y + z ))
+
+	for (( i = 1; i <= x; i++ ))
+	do
+		folder=$(( i * y ))
+		files=$(ls -Srp | grep -v / | head -n $y)
+
+		mkdir $folder
+		mv $files $folder
+	done
+}
+
+jr()
+{
+	file="$HOME/Documentos/formats/text/txt/journal/$(date +%F).txt"
+	less "$file"
+}
+
+jw()
+{
+	file="$HOME/Documentos/formats/text/txt/journal/$(date +%F).txt"
+	time="$(date +%H:%M:%S)"
+	decoration="$(seq -s- 73|tr -d '[:digit:]')"
+
+	[ ! -f "$file" ] && touch "$file"
+
+	echo -e "\n$time $decoration\n\n" >> "$file" 
+
+	vim "$file"
+}
+
+list_files()
+{
+	# If this is never called, what happens?
+	if [ -f "$1" ]
+	then
+		echo "$1"
+	fi
+
+	if [ -d "$1" ]
+	then	
+		for sub_item in "$1"/*
+		do
+			path=$(list_files "$sub_item")
+			path=${path/\/\//\/}
+			path=${path/\.\//}
+
+			echo "$path"
+		done
+	fi
+}
+
+toca()
+{
+	MUSIC_DIR=$(xdg-user-dir MUSIC)
+	SONG=$(fd \.mp3 $MUSIC_DIR | fzf)
+	mpv "$SONG" &
+	exit
+}
+
