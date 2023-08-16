@@ -1,4 +1,17 @@
-
+#
+#
+#
+#                                                                  .
+#                                                                .o8
+#           .ooooo.  oooo    ooo oo.ooooo.   .ooooo.  oooo d8b .o888oo
+#          d88' `88b  `88b..8P'   888' `88b d88' `88b `888""8P   888
+#          888ooo888    Y888'     888   888 888   888  888       888
+#          888    .o  .o8"'88b    888   888 888   888  888       888 .
+#          `Y8bod8P' o88'   888o  888bod8P' `Y8bod8P' d888b      "888"
+#                                 888
+#--------------------------------o888o-------------------------------------------
+#--------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------
 export PATH="$HOME/.bin:$HOME/.local/bin:$PATH:/opt/dataspell/bin"
 export LESSOPEN="| /usr/bin/source-highlight-esc.sh %s"
 export LESS=" -R"
@@ -11,3 +24,4 @@ export HISTFILE=~/.bash_eternal_history
 export HISTCONTROL="erasedups:ignorespace"
 PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
+# vim: ft=bash
