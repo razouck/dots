@@ -1,5 +1,17 @@
-
-# Safety features
+#
+#
+#                             
+#                             oooo   o8o
+#                             `888   `"'
+#                    .oooo.    888  oooo   .oooo.    .oooo.o
+#                   `P  )88b   888  `888  `P  )88b  d88(  "8
+#                    .oP"888   888   888   .oP"888  `"Y88b.
+#                   d8(  888   888   888  d8(  888  o.  )88b
+#                   `Y888""8o o888o o888o `Y888""8o 8""888P'
+#
+#--------------------------------------------------------------------------------
+#------------------------------- Safety features --------------------------------
+#--------------------------------------------------------------------------------
 alias cp='cp -i'
 alias ln='ln -i'
 alias mv='mv -i'
@@ -9,20 +21,29 @@ alias chmod='chmod --preserve-root'
 alias chown='chown --preserve-root'
 
 
-# Privileged Access
+
+#--------------------------------------------------------------------------------
+#------------------------------ Privileged Access -------------------------------
+#--------------------------------------------------------------------------------
 if (( UID != 0))
 then
 	alias svim='sudoedit'
 fi
 
 
-# Color
+
+#--------------------------------------------------------------------------------
+#------------------------------------ Color -------------------------------------
+#--------------------------------------------------------------------------------
 alias ip="ip -color=auto"
 alias ls="ls --color=auto"
 alias grep="grep -i --color=auto"
 
 
+
+#--------------------------------------------------------------------------------
 # Git
+#--------------------------------------------------------------------------------
 alias ga='git add'
 alias grm='git rm'
 alias gl='git log'
@@ -39,7 +60,10 @@ alias gcp='git cherry-pick'
 alias gri='git rebase --interactive'
 
 
-# cd
+
+#--------------------------------------------------------------------------------
+#------------------------------------- cd ---------------------------------------
+#--------------------------------------------------------------------------------
 alias jsbin="cd ~/Documentos/jsbin"
 alias repos="cd ~/Documentos/repos"
 alias cs="cd ~/Documentos/formats/txt/cs"
@@ -47,30 +71,42 @@ alias webdev="cd ~/Documentos/formats/txt/webdev"
 alias linuxfu="cd ~/Documentos/formats/txt/linuxfu"
 
 
-# Commands
+
+#--------------------------------------------------------------------------------
+#---------------------------------- Commands ------------------------------------
+#--------------------------------------------------------------------------------
 alias df="df -h"
+alias day="redshift -x"
 alias pcmanfm="pcmanfm . &"
 alias hist="history | grep -E"
 alias install="sudo pacman -S"
+alias night="redshift -O 3000k"
 alias uinstall="sudo pacman -Rns"
 alias update="paru -Syyu && sudo flatpak update"
 alias brilho="xrandr --output LVDS-1 --brightness"
 alias bgm="mpv http://www.hbr1.com/playlist/trance.ogg.m3u"
+alias rmexif="exiftool -recurse -overwrite_original -all= ."
 alias mp3-dl="yt-dlp -x --audio-format mp3 --embed-thumbnail"
 
 
-# Text
+
+#--------------------------------------------------------------------------------
+#------------------------------------ Text --------------------------------------
+#--------------------------------------------------------------------------------
 alias journal="~/Documentos/formats/txt/journal"
 alias todo="nvim ~/Documentos/formats/text/txt/lists/todo.md"
 alias notodo="nvim ~/Documentos/formats/text/txt/lists/notodo.md"
 alias checklist="less ~/Documentos/formats/text/txt/lists/checklist.md"
 
 
-# Config Files
+
+#--------------------------------------------------------------------------------
+#-------------------------------- Config Files ----------------------------------
+#--------------------------------------------------------------------------------
+alias nvimconf="nvim ~/.config/nvim/init.lua"
+alias dunstconf="nvim ~/.config/dunst/dunstrc"
 alias dots="config ls-tree -r main --name-only"
-alias nvimconf="vim ~/.config/nvim/init.lua"
-alias dunstconf="vim ~/.config/dunst/dunstrc"
-alias spectrwmconf="vim ~/.config/spectrwm/spectrwm.conf"
-alias alacrittyconf="vim ~/.config/alacritty/alacritty.yml"
+alias spectrwmconf="nvim ~/.config/spectrwm/spectrwm.conf"
+alias alacrittyconf="nvim ~/.config/alacritty/alacritty.yml"
 alias config='/usr/bin/git --git-dir=$HOME/.dots/ --work-tree=$HOME'
 
