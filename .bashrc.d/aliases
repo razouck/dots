@@ -42,7 +42,7 @@ alias grep="grep -i --color=auto"
 
 
 #--------------------------------------------------------------------------------
-# Git
+#------------------------------------- Git --------------------------------------
 #--------------------------------------------------------------------------------
 alias ga='git add'
 alias grm='git rm'
@@ -101,7 +101,7 @@ alias checklist="less ~/Documentos/formats/text/txt/lists/checklist.md"
 
 
 #--------------------------------------------------------------------------------
-#-------------------------------- Config Files ----------------------------------
+#------------------------------------ Files --------------------------------------
 #--------------------------------------------------------------------------------
 alias nvimconf="nvim ~/.config/nvim/init.lua"
 alias dunstconf="nvim ~/.config/dunst/dunstrc"
@@ -109,4 +109,5 @@ alias dots="config ls-tree -r main --name-only"
 alias spectrwmconf="nvim ~/.config/spectrwm/spectrwm.conf"
 alias alacrittyconf="nvim ~/.config/alacritty/alacritty.yml"
 alias config='/usr/bin/git --git-dir=$HOME/.dots/ --work-tree=$HOME'
+alias bookmarks="nvim ~/Documentos/formats/text/txt/lists/bookmarks.txt"
 
