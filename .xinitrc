@@ -1,5 +1,17 @@
 #!/bin/sh
 
+#
+#                               o8o               o8o      .
+#                               `"'               `"'    .o8
+#                  oooo    ooo oooo  ooo. .oo.   oooo  .o888oo
+#                   `88b..8P'  `888  `888P"Y88b  `888    888
+#                     Y888'     888   888   888   888    888
+#                   .o8"'88b    888   888   888   888    888 .
+#                  o88'   888o o888o o888o o888o o888o   "888"
+#
+#--------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------
 userresources="$HOME/.Xresources"
 
 if [ -f "$userresources" ]
@@ -29,3 +41,4 @@ exec spectrwm
 
 # I should probably code a script that'll set the screen brightness depending on
 # the time of the day.
+
