@@ -16,5 +16,6 @@
 
 	// Unique id used for correlating crash reports sent from this instance.
 	// Do not edit this value.
-	"crash-reporter-id": "74328436-3cdc-484a-9a6e-a084996079e1"
+	"crash-reporter-id": "74328436-3cdc-484a-9a6e-a084996079e1",
+	"password-store":"gnome"
 }
