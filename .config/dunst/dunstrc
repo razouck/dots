@@ -1,0 +1,112 @@
+#
+#
+# 
+#                   .o8                                       .
+#                  "888                                     .o8
+#              .oooo888  oooo  oooo  ooo. .oo.    .oooo.o .o888oo
+#             d88' `888  `888  `888  `888P"Y88b  d88(  "8   888
+#             888   888   888   888   888   888  `"Y88b.    888
+#             888   888   888   888   888   888  o.  )88b   888 .
+#             `Y8bod88P"  `V88V"V8P' o888o o888o 8""888P'   "888"
+# 
+#--------------------------------------------------------------------------------
+                                     [global] 
+#----------------------------------- Settings -----------------------------------
+#--------------------------------------------------------------------------------
+
+#--------------------------------------------------------------------------------
+#----------------------------------- Position -----------------------------------
+#--------------------------------------------------------------------------------
+offset                   = 21x21
+origin                   = bottom-right
+
+
+
+#--------------------------------------------------------------------------------
+#---------------------------------- Appearance ----------------------------------
+#--------------------------------------------------------------------------------
+# Dimensions
+scale                    = 0
+width                    = 480
+height                   = 300
+
+# Spacing
+padding                  = 10
+horizontal_padding       = 10
+text_icon_padding        = 10
+
+# Text
+alignment                = right
+vertical_alignment       = center
+font                     = Martian Mono 11
+line_height              = 0
+word_wrap                = false
+
+# Icons
+icon_path                = /usr/share/icons/hicolor/128x128/status
+min_icon_size            = 93
+max_icon_size            = 93
+icon_position            = right
+
+# Decoration
+frame_width              = 1
+transparency             = 4
+corner_radius            = 0
+separator_height         = 2
+
+
+
+#--------------------------------------------------------------------------------
+#--------------------------------- Progress Bar ---------------------------------
+#--------------------------------------------------------------------------------
+progress_bar             = true
+progress_bar_height      = 14
+progress_bar_min_width   = 150
+progress_bar_max_width   = 460
+progress_bar_frame_width = 1
+
+
+
+#--------------------------------------------------------------------------------
+#------------------------------------ Mouse -------------------------------------
+#--------------------------------------------------------------------------------
+mouse_left_click         = do_action, close_current
+mouse_right_click        = context, close_current
+mouse_middle_click       = close_all
+
+
+
+#--------------------------------------------------------------------------------
+#----------------------------------- Behavior -----------------------------------
+#--------------------------------------------------------------------------------
+title                    = Dunst
+class                    = Dunst
+
+sort                     = yes
+follow                   = mouse
+show_indicators          = yes
+
+idle_threshold           = 120
+show_age_threshold       = 60
+
+stack_duplicates         = true
+hide_duplicate_count     = false
+
+indicate_hidden          = yes
+notification_limit       = 6
+
+markup                   = full
+ellipsize                = end
+ignore_newline           = no
+
+sticky_history           = yes
+history_length           = 20
+
+ignore_dbusclose         = true
+always_run_script        = true
+
+dmenu                    = /usr/bin/dmenu -p dunst:
+browser                  = /usr/bin/brave
+
+force_xinerama           = false
+
