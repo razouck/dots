@@ -1,0 +1,83 @@
+#
+#
+#
+#                  oooo
+#                  `888
+#                   888  oooo   .ooooo.  oooo    ooo  .oooo.o
+#                   888 .8P'   d88' `88b  `88.  .8'  d88(  "8
+#                   888888.    888ooo888   `88..8'   `"Y88b.
+#                   888 `88b.  888    .o    `888'    o.  )88b
+#                  o888o o888o `Y8bod8P'     .8'     8""888P'
+#                                        .o..P'
+#----------------------------------------`Y8P'------------------------------------
+#------------------------------------ Apps --------------------------------------
+#--------------------------------------------------------------------------------
+"pcmanfm"
+	Control + Alt + f
+
+"rofi -show run"
+	Alt + F2
+
+"alacritty"
+	Control + Alt + t
+
+"alacritty -e termdown"
+	Control + Alt + s
+
+
+
+#--------------------------------------------------------------------------------
+#------------------------------------ Media -------------------------------------
+#--------------------------------------------------------------------------------
+"media.sh show"
+	Control + F9
+
+"media.sh toggle"
+	Control + F10
+
+"media.sh next"
+	Control + F12
+
+"media.sh prev"
+	Control + F11
+
+"recscr.sh"
+	Control + Alt + Shift + R
+
+
+
+#--------------------------------------------------------------------------------
+#------------------------------- Screenshots ------------------------------------
+#--------------------------------------------------------------------------------
+"screenshot.sh all file"
+	Print
+
+"screenshot.sh window file"
+	Alt + Print
+
+"screenshot.sh area file"
+	Shift + Print
+
+"screenshot.sh all clipboard"
+	Control + Print
+
+"screenshot.sh window clipboard"
+	Control + Alt + Print
+
+"screenshot.sh area clipboard"
+	Control + Shift + Print
+
+
+
+#--------------------------------------------------------------------------------
+#------------------------------------ Volume ------------------------------------
+#--------------------------------------------------------------------------------
+"volume.sh mute"
+	XF86AudioMute
+
+"volume.sh up"
+	XF86AudioRaiseVolume
+
+"volume.sh down"
+	XF86AudioLowerVolume
+
