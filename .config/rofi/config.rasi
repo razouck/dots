@@ -1,0 +1,16 @@
+
+@theme "./theme.rasi"
+
+configuration
+{
+	cache-dir           : ".local/share/rofi/cache" ;
+	disable-history     : false                     ;
+	display-drun        : ""                        ;
+	display-emoji       : ""                        ;
+	display-run         : ""                        ;
+	display-windonw     : ""                        ;
+	drun-display-format : "{icon} {name}"           ;
+	font                : "Martian Mono 11"         ;
+	icon-theme          : "Arc"                     ;
+	show-icons          : true                      ;
+}
