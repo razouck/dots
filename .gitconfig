@@ -1,0 +1,11 @@
+[user]
+	name = razouck
+	email = 14312156+razouck@users.noreply.github.com
+[init]
+	defaultBranch = main
+[color]
+	ui = auto
+[pull]
+	rebase = false
+[credential]
+	helper = cache
