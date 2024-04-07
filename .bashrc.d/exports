@@ -1,0 +1,43 @@
+#
+#
+#
+#                                                                  .
+#                                                                .o8
+#           .ooooo.  oooo    ooo oo.ooooo.   .ooooo.  oooo d8b .o888oo
+#          d88' `88b  `88b..8P'   888' `88b d88' `88b `888""8P   888
+#          888ooo888    Y888'     888   888 888   888  888       888
+#          888    .o  .o8"'88b    888   888 888   888  888       888 .
+#          `Y8bod8P' o88'   888o  888bod8P' `Y8bod8P' d888b      "888"
+#                                 888
+#--------------------------------o888o-------------------------------------------
+#--------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------
+if [ -d "$HOME/.bin" ]
+then
+	PATH="$HOME/.bin:$PATH"
+fi
+
+if [ -d "$HOME/.local/bin" ]
+then
+	PATH="$HOME/.local/bin:$PATH"
+fi
+
+if [ -d "/var/lib/flatpak/exports/bin/" ]
+then
+	PATH="/var/lib/flatpak/exports/bin/:$PATH"
+fi
+
+
+# http://stackoverflow.com/questions/9457233/unlimited-bash-history
+export HISTFILESIZE=
+export HISTSIZE=
+export HISTTIMEFORMAT="[%F %T] "
+export HISTFILE=~/.bash_eternal_history
+export HISTCONTROL="ignoredups:erasedups:ignorespace"
+
+PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+
+RANGER_LOAD_DEFAULT_RC=false
+
+# vim: ft=bash
+
