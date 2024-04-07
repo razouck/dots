@@ -1,0 +1,154 @@
+#
+#
+#
+#                        .o88o.
+#                        888 `"
+#                       o888oo  oooo  oooo  ooo. .oo.
+#                        888    `888  `888  `888P"Y88b
+#                        888     888   888   888   888
+#                        888     888   888   888   888
+#                       o888o    `V88V"V8P' o888o o888o
+#
+#--------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------
+function cdown()
+{
+	N=$1
+
+	while [[ $((--N)) > 0 ]]
+	do
+		echo "$N" | figlet -c -f roman && sleep 1
+	done
+}
+
+function group_files()
+{
+	x=$(ls -1 | wc -l)
+	y=${1:-100}
+	z=0
+
+	if (( x % y > 0 ))
+	then
+		z=1
+	fi
+
+	x=$(( x / y + z ))
+
+	for (( i = 1; i <= x; i++ ))
+	do
+		folder=$(( i * y ))
+		files=$(ls -Srp | grep -v / | head -n $y)
+
+		mkdir $folder
+		mv $files $folder
+	done
+}
+
+function jr()
+{
+	file="$HOME/Documentos/formats/text/txt/journal/$(date +%F).txt"
+	less "$file"
+}
+
+function jw()
+{
+	file="$HOME/Documentos/formats/text/txt/journal/$(date +%F).txt"
+	time="$(date +%H:%M:%S)"
+	decoration="$(seq -s- 73|tr -d '[:digit:]')"
+
+	[ ! -f "$file" ] && touch "$file"
+
+	echo -e "\n$time $decoration\n\n" >> "$file"
+
+	command nvim "$file"
+}
+
+function mcd()
+{
+	mkdir -p "$1"
+	cd "$1"
+}
+
+function playlist()
+{
+	local p="\.(mp3|flac)$"
+	local a="$(fd "$p" ~/Arquivo/archive_music/)"
+	local d="$(fd "$p" ~/Downloads/)"
+	local m="$(fd "$p" ~/Músicas/)"
+	local f="$(echo "$d$m$a" | fzf -m | sed -e 's/^/\"/g' -e 's/$/\"/g')"
+
+	if [ -n "$f" ]
+	then
+		echo "$f" | xargs mpv --no-terminal & disown
+		sleep 0.15
+		# ^ That ensures that `mpv`'s window sits on top of `cava`'s.
+		alacritty -e cava & disown
+	fi > /dev/null 2>&1
+	#  `disown` and the `dev` thingy are used so that this funciton has no
+	#+ output whatsoever. Never.
+}
+
+# Yeah, this fucking function is not robust enough.
+function search_fzf()
+{
+	local path="$(fd . "$HOME" | fzf)"
+
+	if [ -n "$path" ]
+	then
+		if [ -d "$path" ]
+		then
+			cd "$path"
+		else
+			xdg-open "$path"
+		fi
+	fi
+}
+
+function ya()
+{
+	local tmp="$(mktemp)"
+
+	command yazi "$@" --cwd-file="$tmp"
+
+	if [ -f "$tmp" ]; then
+		dir="$(cat "$tmp")"
+
+		rm -f "$tmp"
+		[ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
+	fi
+}
+
+function mp3dl()
+{
+	command yt-dlp -x --audio-format="mp3" --embed-thumbnail "$1"
+	command mp3gain -r -m 4 -c -T *mp3
+}
+
+function ex()
+{
+	if [ -f "$1" ]
+	then
+		case $1 in
+		*.7z)        7z x $1       ;;
+		*.bz2)       bunzip2 $1    ;;
+		*.deb)       ar x $1       ;;
+		*.gz)        gunzip $1     ;;
+		*.rar)       unrar x $1    ;;
+		*.tar)       tar xf $1     ;;
+		*.tar.bz2)   tar xjf $1    ;;
+		*.tar.gz)    tar xzf $1    ;;
+		*.tar.xz)    tar xf $1     ;;
+		*.tar.zst)   unzstd $1     ;;
+		*.tbz2)      tar xjf $1    ;;
+		*.tgz)       tar xzf $1    ;;
+		*.Z)         uncompress $1 ;;
+		*.zip)       unzip $1      ;;
+		*)           echo "'$1' cannot be extracted via ex()" ;;
+		esac
+	else
+		echo "'$1' is not a valid file"
+	fi
+}
+
+# vim: ft=bash
