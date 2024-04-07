@@ -1,0 +1,8 @@
+{
+    "editor_theme": "catppuccin-latte",
+    "font_size_points": 10,
+    "global_theme": "alternate"
+    "initial_working_directory": "~",
+    "pdf_previewer": "none",
+    "posix_terminal_shell": "bash",
+}
