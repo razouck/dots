@@ -1,0 +1,53 @@
+set show-recent                 3
+set selection-clipboard         clipboard
+
+set font                        "Martian Mono 11"
+
+# Zenbones Color Scheme
+
+set default-bg                  "#f0edec"
+set default-fg                  "#2c363c"
+
+set statusbar-bg                "#cfc1ba"
+set statusbar-fg                "#2c363c"
+
+set index-bg                    "#f0edec"
+set index-fg                    "#2c363c"
+
+set index-active-bg             "#286486"
+set index-active-fg             "#f0edec"
+
+set inputbar-bg                 "#f0edec"
+set inputbar-fg                 "#2c363c"
+
+set notification-bg             "#bbaba3"
+set notification-fg             "#564e4a"
+
+set notification-error-bg       "#a8334c"
+set notification-error-fg       "#f0edec"
+
+set notification-warning-bg     "#944927"
+set notification-warning-fg     "#f0edec"
+
+set highlight-fg                "#4f6c31"
+set highlight-color             "#cbd9e3"
+set highlight-active-color      "#cbd9e3"
+
+set completion-bg               "#f0edec"
+set completion-fg               "#286486"
+
+set completion-group-bg         "#cfc1ba"
+set completion-group-fg         "#2c363c"
+
+set completion-highlight-bg     "#286486"
+set completion-highlight-fg     "#f0edec"
+
+set render-loading-bg           "#f0edec"
+set render-loading              "#2c363c"
+
+set recolor-darkcolor           "#2c363c"
+set recolor-lightcolor          "#f0edec"
+
+set recolor                     true
+set recolor-keephue             false
+set recolor-reverse-video       true
