@@ -1,33 +1,4 @@
 return {
-	-- This shit didn't even work, for real.
-	-- My python code is still getting formatted to hell.
-	{
-		"stevearc/conform.nvim",
-		opts = function()
-			---@class ConformOpts
-			local opts = {
-				format = {
-					timeout_ms = 3000,
-					async = false, -- not recommended to change
-					quiet = false, -- not recommended to change
-					lsp_fallback = true, -- not recommended to change
-				},
-
-				---@type table<string, conform.FormatterUnit[]>
-				formatters_by_ft = {
-					lua = { "stylua" },
-					fish = { "fish_indent" },
-				},
-
-				---@type table<string, conform.FormatterConfigOverride|fun(bufnr: integer): nil|conform.FormatterConfigOverride>
-				formatters = {
-					injected = { options = { ignore_errors = true } },
-				},
-			}
-			return opts
-		end,
-	},
-
 	-- Add a colorizer
 	{
 		"brenoprata10/nvim-highlight-colors",
@@ -63,7 +34,6 @@ return {
 				"json",
 				"lua",
 				"markdown",
-				"markdown_inline",
 				"python",
 				"query",
 				"rasi",
@@ -92,10 +62,10 @@ return {
 				local line, col = unpack(vim.api.nvim_win_get_cursor(0))
 				return col ~= 0
 					and vim.api
-							.nvim_buf_get_lines(0, line - 1, line, true)[1]
-							:sub(col, col)
-							:match("%s")
-						== nil
+					.nvim_buf_get_lines(0, line - 1, line, true)[1]
+					:sub(col, col)
+					:match("%s")
+					== nil
 			end
 
 			local luasnip = require("luasnip")
