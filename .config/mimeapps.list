@@ -21,6 +21,7 @@ x-scheme-handler/http=firefox.desktop;
 x-scheme-handler/https=firefox.desktop;
 application/vnd.sqlite3=code.desktop;
 application/xml=nvim.desktop;
+application/epub+zip=org.pwmt.zathura-cb.desktop;
 
 [Default Applications]
 application/json=nvim.desktop;
@@ -87,3 +88,4 @@ text/calendar=nvim.desktop
 inode/directory=pcmanfm.desktop
 text/x-script.python=nvim.desktop
 application/xml=nvim.desktop
+application/epub+zip=org.pwmt.zathura-cb.desktop
