@@ -22,6 +22,8 @@ x-scheme-handler/https=firefox.desktop;
 application/vnd.sqlite3=code.desktop;
 application/xml=nvim.desktop;
 application/epub+zip=org.pwmt.zathura-cb.desktop;
+x-scheme-handler/mailto=userapp-Thunderbird-BY5BM2.desktop;
+x-scheme-handler/mid=userapp-Thunderbird-BY5BM2.desktop;
 
 [Default Applications]
 application/json=nvim.desktop;
@@ -89,3 +91,6 @@ inode/directory=pcmanfm.desktop
 text/x-script.python=nvim.desktop
 application/xml=nvim.desktop
 application/epub+zip=org.pwmt.zathura-cb.desktop
+x-scheme-handler/mailto=userapp-Thunderbird-BY5BM2.desktop
+message/rfc822=userapp-Thunderbird-BY5BM2.desktop
+x-scheme-handler/mid=userapp-Thunderbird-BY5BM2.desktop
