@@ -16,7 +16,8 @@ if [ -d ~/.bashrc.d ]; then
 fi
 unset rc
 
-bind '"\C-f":"search_fzf\C-m"'
-
 eval "$(zoxide init --cmd cd bash)"
 eval "$(starship init bash)"
+
+bind '"\C-f":"search_fzf\C-m"'
+# TODO: ^ Change this line to call the search the text files function.
