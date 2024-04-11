@@ -61,7 +61,7 @@ function jw()
 
 	echo -e "\n$time $decoration\n\n" >> "$file"
 
-	command nvim "$file"
+	command vim "$file"
 }
 
 function mcd()
