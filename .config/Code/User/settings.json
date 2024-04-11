@@ -19,5 +19,5 @@
 	"testMyCode.logLevel": "errors",
 	"testMyCode.updateExercisesAutomatically": true,
 	"window.menuBarVisibility": "toggle",
-	"workbench.colorTheme": "Gruvbox Light Soft",
+	"workbench.colorTheme": "Zenbones Zenwritten Light",
 }
