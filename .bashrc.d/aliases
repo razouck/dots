@@ -22,8 +22,8 @@ alias grep="grep -i --color=auto"
 #---------------------------------- Commands ------------------------------------
 #--------------------------------------------------------------------------------
 alias cat="bat"
+alias nv="nvim"
 alias df="df -h"
-alias vim="nvim"
 alias yeet="paru -Rns"
 alias day="redshift -x"
 alias fetch="fastfetch"
@@ -59,7 +59,7 @@ alias ll="eza -l -s extension --group-directories-first"
 #--------------------------------------------------------------------------------
 alias dots="config ls-tree -r main --name-only"
 alias config='/usr/bin/git --git-dir=$HOME/.dots/ --work-tree=$HOME'
-alias bookmarks="nvim ~/Documentos/formats/text/txt/lists/bookmarks.txt"
+alias bookmarks="vim ~/Documentos/formats/text/txt/lists/bookmarks.txt"
 
 
 
@@ -109,8 +109,8 @@ alias chown='chown --preserve-root'
 #------------------------------------ Text --------------------------------------
 #--------------------------------------------------------------------------------
 alias journal="~/Documentos/formats/txt/journal"
-alias money="nvim ~/Documentos/formats/text/md/money.md"
-alias todo="nvim ~/Documentos/formats/text/txt/lists/todo.md"
-alias notodo="nvim ~/Documentos/formats/text/txt/lists/notodo.md"
+alias money="vim ~/Documentos/formats/text/md/money.md"
+alias todo="vim ~/Documentos/formats/text/txt/lists/todo.md"
+alias notodo="vim ~/Documentos/formats/text/txt/lists/notodo.md"
 
 # vim: ft=bash
