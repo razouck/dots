@@ -12,21 +12,23 @@
 #--------------------------------o888o-------------------------------------------
 #--------------------------------------------------------------------------------
 #--------------------------------------------------------------------------------
+# Notes:
+# 1. Creating a loop is not worth the trouble. Bash is just a terrible language.
+# 2. `PATH` looks weird? Check this: https://unix.stackexchange.com/a/415028
 if [ -d "$HOME/.bin" ]
 then
-	PATH="$HOME/.bin:$PATH"
+	PATH="$HOME/.bin:${PATH:+:${PATH}}"
 fi
 
-if [ -d "$HOME/.local/bin" ]
+if [ -d "$HOME/.local/.bin" ]
 then
-	PATH="$HOME/.local/bin:$PATH"
+	PATH="$HOME/.bin/:${PATH:+:${PATH}}"
 fi
 
-if [ -d "/var/lib/flatpak/exports/bin/" ]
+if [ -d "$HOME/.local/share/gem/ruby/3.0.0/bin" ]
 then
-	PATH="/var/lib/flatpak/exports/bin/:$PATH"
+	PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:${PATH:+:${PATH}}"
 fi
-
 
 # http://stackoverflow.com/questions/9457233/unlimited-bash-history
 export HISTFILESIZE=
@@ -40,4 +42,3 @@ PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 RANGER_LOAD_DEFAULT_RC=false
 
 # vim: ft=bash
-
