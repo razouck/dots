@@ -9,6 +9,9 @@
 #                   d8(  888   888   888  d8(  888  o.  )88b
 #                   `Y888""8o o888o o888o `Y888""8o 8""888P'
 #
+#
+#
+ed="nvim" 
 #--------------------------------------------------------------------------------
 #------------------------------------ Color -------------------------------------
 #--------------------------------------------------------------------------------
@@ -21,18 +24,15 @@ alias grep="grep -i --color=auto"
 #--------------------------------------------------------------------------------
 #---------------------------------- Commands ------------------------------------
 #--------------------------------------------------------------------------------
-alias cat="bat"
 alias nv="nvim"
-alias df="df -h"
+alias hx="helix"
 alias yeet="paru -Rns"
 alias day="redshift -x"
 alias fetch="fastfetch"
-alias pcmanfm="pcmanfm . &"
 alias hist="history | grep -E"
 alias install="sudo pacman -S"
 alias night="redshift -O 3000k"
 alias refresh="source ~/.bashrc"
-alias rstudio="rstudio-daily-bin"
 alias uninstall="sudo pacman -Rns"
 alias calendar="cal --color=always -y"
 alias merge="xrdb -merge ~/.Xresources"
@@ -57,9 +57,9 @@ alias ll="eza -l -s extension --group-directories-first"
 #--------------------------------------------------------------------------------
 #------------------------------------ Files -------------------------------------
 #--------------------------------------------------------------------------------
-alias dots="config ls-tree -r main --name-only"
+alias dots="cd; config ls-tree -r main --name-only; cd -"
 alias config='/usr/bin/git --git-dir=$HOME/.dots/ --work-tree=$HOME'
-alias bookmarks="vim ~/Documentos/formats/text/txt/lists/bookmarks.txt"
+alias bookmarks="$ed ~/Documentos/formats/text/txt/lists/bookmarks.txt"
 
 
 
@@ -106,11 +106,21 @@ alias chown='chown --preserve-root'
 
 
 #--------------------------------------------------------------------------------
+#--------------------------------- Substitution ---------------------------------
+#--------------------------------------------------------------------------------
+alias cat="bat"
+alias df="df -h"
+alias pcmanfm="pcmanfm . &"
+alias rstudio="rstudio-daily-bin"
+
+
+
+#--------------------------------------------------------------------------------
 #------------------------------------ Text --------------------------------------
 #--------------------------------------------------------------------------------
 alias journal="~/Documentos/formats/txt/journal"
-alias money="vim ~/Documentos/formats/text/md/money.md"
-alias todo="vim ~/Documentos/formats/text/txt/lists/todo.md"
-alias notodo="vim ~/Documentos/formats/text/txt/lists/notodo.md"
+alias money="$ed ~/Documentos/formats/text/md/money.md"
+alias todo="$ed ~/Documentos/formats/text/txt/lists/todo.md"
+alias notodo="$ed ~/Documentos/formats/text/txt/lists/notodo.md"
 
 # vim: ft=bash
