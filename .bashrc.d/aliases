@@ -1,6 +1,7 @@
 #
 #
 #
+#
 #                             oooo   o8o
 #                             `888   `"'
 #                    .oooo.    888  oooo   .oooo.    .oooo.o
@@ -9,9 +10,6 @@
 #                   d8(  888   888   888  d8(  888  o.  )88b
 #                   `Y888""8o o888o o888o `Y888""8o 8""888P'
 #
-#
-#
-ed="nvim" 
 #--------------------------------------------------------------------------------
 #------------------------------------ Color -------------------------------------
 #--------------------------------------------------------------------------------
@@ -22,24 +20,38 @@ alias grep="grep -i --color=auto"
 
 
 #--------------------------------------------------------------------------------
-#---------------------------------- Commands ------------------------------------
+#---------------------------------- Brightness ----------------------------------
 #--------------------------------------------------------------------------------
-alias nv="nvim"
-alias hx="helix"
-alias yeet="paru -Rns"
 alias day="redshift -x"
+alias dusk="redshift -x; redshift -O 4000k"
+alias night="redshift -x; redshift -O 3000k"
+alias brilho="xrandr --output LVDS-1 --brightness"
+
+
+
+#--------------------------------------------------------------------------------
+#----------------------------------- Commands -----------------------------------
+#--------------------------------------------------------------------------------
+alias yeet="paru -Rns"
 alias fetch="fastfetch"
 alias hist="history | grep -E"
 alias install="sudo pacman -S"
-alias night="redshift -O 3000k"
 alias refresh="source ~/.bashrc"
 alias uninstall="sudo pacman -Rns"
 alias calendar="cal --color=always -y"
 alias merge="xrdb -merge ~/.Xresources"
-alias brilho="xrandr --output LVDS-1 --brightness"
 alias update="paru -Syyu && sudo flatpak update -y"
 alias bgm="mpv http://www.hbr1.com/playlist/trance.ogg.m3u"
 alias rmexif="exiftool -recurse -overwrite_original -all= ."
+
+
+
+#--------------------------------------------------------------------------------
+#------------------------------------ Editors -----------------------------------
+#--------------------------------------------------------------------------------
+ed="nvim" 
+alias nv="nvim"
+alias hx="helix"
 
 
 
@@ -110,6 +122,7 @@ alias chown='chown --preserve-root'
 #--------------------------------------------------------------------------------
 alias cat="bat"
 alias df="df -h"
+alias vim="nvim --clean"
 alias pcmanfm="pcmanfm . &"
 alias rstudio="rstudio-daily-bin"
 
@@ -118,7 +131,6 @@ alias rstudio="rstudio-daily-bin"
 #--------------------------------------------------------------------------------
 #------------------------------------ Text --------------------------------------
 #--------------------------------------------------------------------------------
-alias journal="~/Documentos/formats/txt/journal"
 alias money="$ed ~/Documentos/formats/text/md/money.md"
 alias todo="$ed ~/Documentos/formats/text/txt/lists/todo.md"
 alias notodo="$ed ~/Documentos/formats/text/txt/lists/notodo.md"
