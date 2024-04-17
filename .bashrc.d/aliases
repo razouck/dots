@@ -69,7 +69,6 @@ alias ll="eza -l -s extension --group-directories-first"
 #--------------------------------------------------------------------------------
 #------------------------------------ Files -------------------------------------
 #--------------------------------------------------------------------------------
-alias dots="cd; config ls-tree -r main --name-only; cd -"
 alias config='/usr/bin/git --git-dir=$HOME/.dots/ --work-tree=$HOME'
 alias bookmarks="$ed ~/Documentos/formats/text/txt/lists/bookmarks.txt"
 

@@ -25,6 +25,14 @@ function cdown()
 	done
 }
 
+function dots()
+{
+	cd
+	local files="$(config ls-tree -r main --name-only)"
+	cd -
+	echo "$files"
+}
+
 function ex()
 {
 	if [ -f "$1" ]
