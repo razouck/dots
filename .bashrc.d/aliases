@@ -71,6 +71,7 @@ alias ll="eza -l -s extension --group-directories-first"
 #--------------------------------------------------------------------------------
 alias config='/usr/bin/git --git-dir=$HOME/.dots/ --work-tree=$HOME'
 alias bookmarks="$ed ~/Documentos/formats/text/txt/lists/bookmarks.txt"
+alias packages="pacman -Qeq > Documentos/formats/text/txt/lists/packages.txt"
 
 
 
@@ -124,6 +125,12 @@ alias df="df -h"
 alias vim="nvim --clean"
 alias pcmanfm="pcmanfm . &"
 alias rstudio="rstudio-daily-bin"
+
+
+
+#--------------------------------------------------------------------------------
+#----------------------------------- surfraw ------------------------------------
+#--------------------------------------------------------------------------------
 
 
 
