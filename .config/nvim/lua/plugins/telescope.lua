@@ -1,3 +1,4 @@
+
 local keys = {
 	{ "<leader>fg", desc = "Find files by content" },
 	{ "<leader>ff", desc = "Find files by name"    },
@@ -6,17 +7,20 @@ local keys = {
 	{ "<leader>fh", desc = "Show help tags"        },
 }
 
-local plugin = { "nvim-telescope/telescope.nvim" }
+--------------------------------------------------------------------------------
 
-plugin.dependencies = {
+local M = { "nvim-telescope/telescope.nvim" }
+
+M.dependencies = {
 	"nvim-lua/plenary.nvim",
 	"nvim-telescope/telescope-fzf-native.nvim",
 }
 
-plugin.keys   = keys
-plugin.config = function()
+M.keys   = keys
+M.config = function()
 
 	local builtin = require("telescope.builtin")
+
 	require('telescope').setup()
 
 	local commands = {
@@ -37,4 +41,6 @@ plugin.config = function()
 	end
 end
 
-return plugin
+--------------------------------------------------------------------------------
+
+return M

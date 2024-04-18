@@ -1,8 +1,8 @@
 
-local plugin = { "brenoprata10/nvim-highlight-colors" }
+local M = { "brenoprata10/nvim-highlight-colors" }
 
-plugin.config = function()
+M.config = function()
 	require("nvim-highlight-colors").turnOn()
 end
 
-return plugin
+return M
