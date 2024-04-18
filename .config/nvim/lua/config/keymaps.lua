@@ -1,38 +1,48 @@
+local cmd                  = vim.cmd
+local replace = [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]
+local session_file         = "~/.config/nvim/session/mysession.vim"
+local save_session         = ":mksession! " .. session_file .. "<cr>"
+local load_session         = ":source " .. session_file .. "<cr>"
+
+local n = "n"
+local i = "i"
+local v = "v"
+local ni = { n, i }
+local nv = { n, v }
+
 local function m(mode, remap, action, description)
-	local set = vim.keymap.set
-
-	if description == nil then
-		set(mode, remap, action)
-	else
-		set(mode, remap, action, { desc = description })
-	end
+	vim.keymap.set(mode, remap, action, { desc = description })
 end
-local substitution_command = [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]
 
-------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
-m({ "i", "n" }     , "<esc>"     , "<cmd>noh<cr><esc>" , "Escape and clear hlsearch"                  )
+m(ni, "<esc>"     , "<cmd>noh<cr><esc>", "Escape and clear hlsearch"    )
 
-m({ "n", "v" }     , "<leader>y" , '"+y'               , "Copy to clipboard"                          )
-m("n"              , "<leader>Y" , '"+yg_'             , "Copy content after the cursor to clipboard" )
-m("n"              , "<leader>yy", '"+yy'              , "Copy line to clipboard"                     )
-m("n"              , "<leader>p" , '"+p'               , "Paste from clipboard"                       )
-m("n"              , "<leader>P" , '"+P'               , "Paste from clipboard (before cursor)"       )
+m(nv, "<leader>y" , '"+y'              , "Global copy"                  )
+m(n , "<leader>Y" , '"+yg_'            , "Global copy (after cursor)"   )
+m(n , "<leader>yy", '"+yy'             , "Global copy (line)"           )
+m(n , "<leader>p" , '"+p'              , "Global paste"                 )
+m(n , "<leader>P" , '"+P'              , "Global paste (before cursor)" )
 
-m("v"              , "<"         , "<gv"               , "Indent selection"                           )
-m("v"              , ">"         , ">gv"               , "Unindent selection"                         )
+m(n , "<leader>fn", "<cmd>enew<cr>"    , "New File"                     )
+m(n , "<leader>fx", cmd.Ex             , "Open file manager"            )
+m(n , "<C-S>"     , "<cmd>e #<cr>" ,     "Switch to alternative file"   )
 
-m("v"              , "J"         , ":m '>+1<cr>gv=gv"  , "Move selection up"                          )
-m("v"              , "K"         , ":m '<-2<cr>gv=gv"  , "Move selection down"                        )
+m(n , "<"         , "<gv"              , "Indent selection"             )
+m(n , ">"         , ">gv"              , "Unindent selection"           )
 
-m("n"              , "<leader>fn", "<cmd>enew<cr>"     , "New File"                                   )
-m("n"              , "<leader>fx", vim.cmd.Ex          , "Open file manager"                          )
+m(n , "J"         , ":m '>+1<cr>gv=gv" , "Move selection up"            )
+m(n , "K"         , ":m '<-2<cr>gv=gv" , "Move selection down"          )
 
-m("n"              , "<leader>l" , "<cmd>Lazy<cr>"     , "Lazy"                                       )
-m("n"              , "<leader>m" , "<cmd>Mason<cr>"    , "Mason"                                      )
+m(n , "<leader>l" , "<cmd>Lazy<cr>"    , "Lazy"                         )
+m(n , "<leader>m" , "<cmd>Mason<cr>"   , "Mason"                        )
 
-m("n"              , "<leader>s" , substitution_command, "Replace string under cursor"                )
+m(n , "n"         , "nzzzv"                                             )
+m(n , "N"         , "Nzzzv"                                             )
+m(n , "Q"         , "<nop>"                                             )
 
-m("n"              , "n"         , "nzzzv"                                                            )
-m("n"              , "N"         , "Nzzzv"                                                            )
-m("n"              , "Q"         , "<nop>"                                                            )
+m(n , "<leader>ss", save_session       , "Save session"                 )
+m(n , "<leader>sl", load_session       , "Load session"                 )
+
+m(n , "<leader>s" , replace            , "Replace string under cursor"  )
+

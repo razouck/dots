@@ -5,14 +5,22 @@ local keys = {
 	{ "<C-2>"    , desc = "Select second file in harpoon"   },
 	{ "<C-3>"    , desc = "Select third file in harpoon"    },
 	{ "<C-4>"    , desc = "Select fourth file in harpoon"   },
+	{ "<C-5>"    , desc = "Select fifth file in harpoon"    },
+	{ "<C-6>"    , desc = "Select sixth file in harpoon"    }, -- Note
 	{ "<C-p>"    , desc = "Select previous file in harpoon" },
 	{ "<C-n>"    , desc = "Select next file in harpoon"     }
 }
+-- Note: Remap `:e #` first, as <C-6>, by default, triggers it.
 
-local function config()
+local plugin  = { "ThePrimeagen/harpoon" }
+
+plugin.branch = "harpoon2"
+plugin.keys   = keys
+plugin.config = function()
+
 	local harpoon = require("harpoon")
-	local list = harpoon:list()
-	local ui = harpoon.ui
+	local list    = harpoon:list()
+	local ui      = harpoon.ui
 
 	harpoon:setup()
 
@@ -23,23 +31,20 @@ local function config()
 		function() list:select(2)                       end,
 		function() list:select(3)                       end,
 		function() list:select(4)                       end,
+		function() list:select(5)                       end,
+		function() list:select(6)                       end,
 		function() list:prev()                          end,
 		function() list:next()                          end
 	}
 
 	for i = 1, #commands do
-		local key = keys[i]
-		local command = commands[i]
+		local key         = keys[i]
+		local command     = commands[i]
 		local description = key["desc"]
-		local keymap = key[1]
+		local keymap      = key[1]
 
-		vim.keymap.set("n", keymap, command, { desc = description  })
+		vim.keymap.set("n", keymap, command, { desc = description })
 	end
 end
 
-return {
-	"ThePrimeagen/harpoon",
-	branch = "harpoon2",
-	keys = keys,
-	config = config
-}
+return plugin

@@ -6,36 +6,35 @@ local keys = {
 	{ "<leader>fh", desc = "Show help tags"        },
 }
 
-local function config()
-			local builtin = require("telescope.builtin")
-			require('telescope').setup()
+local plugin = { "nvim-telescope/telescope.nvim" }
 
-			local commands = {
-				builtin.find_files,
-				builtin.live_grep,
-				builtin.buffers,
-				builtin.help_tags,
-				builtin.git_files,
-			}
+plugin.dependencies = {
+	"nvim-lua/plenary.nvim",
+	"nvim-telescope/telescope-fzf-native.nvim",
+}
 
-			for i = 1, #commands do
-				local key = keys[i]
-				local command = commands[i]
-				local description = key["desc"]
-				local keymap = key[1]
+plugin.keys   = keys
+plugin.config = function()
 
-				vim.keymap.set("n", keymap, command, { desc = description  })
-			end
+	local builtin = require("telescope.builtin")
+	require('telescope').setup()
+
+	local commands = {
+		builtin.live_grep,
+		builtin.find_files,
+		builtin.buffers,
+		builtin.help_tags,
+		builtin.git_files,
+	}
+
+	for i = 1, #commands do
+		local key          = keys[i]
+		local command      = commands[i]
+		local description  = { desc = key["desc"] }
+		local keymap       = key[1]
+
+		vim.keymap.set("n", keymap, command, { desc = description })
+	end
 end
 
-return {
-	{
-		"nvim-telescope/telescope.nvim",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"nvim-telescope/telescope-fzf-native.nvim",
-		},
-		keys = keys,
-		config = config,
-	},
-}
+return plugin

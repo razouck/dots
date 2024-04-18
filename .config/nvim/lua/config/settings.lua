@@ -1,49 +1,38 @@
 local g                      = vim.g
-local o                      = vim.o
 local opt                    = vim.opt
 
--- Theme
-opt.background               = "light"
-opt.termguicolors            = true
+opt.background               = "light"  -- Set light background.
+opt.pumblend                 = 30       -- Enable transparency in popup menus.
+opt.termguicolors            = true     -- Enable true terminal colors.
 
--- Cursor
-opt.cursorcolumn             = true
-opt.cursorline               = true
-opt.guicursor                = ""
+opt.cursorcolumn             = true     -- Highlight cursor column.
+opt.cursorline               = true     -- Highlight cursor line.
+opt.guicursor                = ""       -- Always use a fat cursor.
 
--- Leader
-g.mapleader                  = " "
+g.mapleader                  = " "      -- Set spacebar as <leader> key.
 g.maplocalleader             = "\\"
 
--- Line Numbers
-opt.number                   = true
-opt.relativenumber           = true
+g.markdown_recommended_style = 0        -- Allow tabs to be used in Markdown.
+g.python_recommended_style   = 0        -- Allow tabs to be used in Python.
+opt.expandtab                = false    -- Use tabs only.
+opt.shiftwidth               = 4        -- Set tab size.
+opt.smartindent              = true     -- Enable smart indentation.
+opt.softtabstop              = 0        -- Don't move with spaces with <Tab>.
+opt.tabstop                  = 4        -- Amount of spaces inserted by tabs.
 
--- Indentation
-o.noexpandtab                = true
-opt.tabstop                  = 4
-opt.shiftwidth               = 4
-opt.softtabstop              = 0
-opt.smartindent              = true
-g.markdown_recommended_style = 0
-g.python_recommended_style   = 0
+opt.mouse                    = "a"      -- Always allow mouse usage.
 
--- Mouse
-opt.mouse                    = "a"
+opt.number                   = true     -- Show the current line number.
+opt.relativenumber           = true     -- Enable relative numbering of lines.
 
--- Rulers
-opt.colorcolumn              = "81,120"
+opt.colorcolumn              = "81,120" -- Draw two rulers.
 
--- Search
-opt.incsearch                = true
+opt.incsearch                = true     -- Live search pattern matching.
 
--- Splits
-opt.splitbelow               = true
-opt.splitright               = true
+opt.splitbelow               = true     -- Put new window below the current one.
+opt.splitright               = true     -- Put new window to the right.
 
--- Undo
-opt.undofile                 = true
-opt.undolevels               = 10000
+opt.undofile                 = true     -- Save undo history for later usage.
+opt.undolevels               = 10000    -- Set maximum amount of undos.
 
--- Wrapping
-opt.wrap                     = false
+opt.wrap                     = false    -- Disable line wrapping.

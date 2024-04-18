@@ -1,14 +1,13 @@
+local keys = {
+	{ "gc"  , desc = "Comment"      },
+	{ "gcc" , desc = "Comment line" },
+}
+
 return {
-	{
-		"JoosepAlviste/nvim-ts-context-commentstring",
-		lazy = true,
-		opts = {
-			enable_autocmd = false,
-		},
-	},
 	{
 		"echasnovski/mini.comment",
 		event = "VeryLazy",
+		keys = keys,
 		opts = {
 			mappings = {
 				comment = "gc",
@@ -23,6 +22,13 @@ return {
 					return c.calculate_commentstring() or vim.bo.commentstring
 				end,
 			},
+		},
+	},
+	{
+		"JoosepAlviste/nvim-ts-context-commentstring",
+		lazy = true,
+		opts = {
+			enable_autocmd = false,
 		},
 	},
 }
