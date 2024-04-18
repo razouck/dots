@@ -1,3 +1,33 @@
+local keys = {
+	{ "<leader>fg", desc = "Find files by content" },
+	{ "<leader>ff", desc = "Find files by name"    },
+	{ "<leader>fb", desc = "Show buffers"          },
+	{ "<leader>g" , desc = "Show git files"        },
+	{ "<leader>fh", desc = "Show help tags"        },
+}
+
+local function config()
+			local builtin = require("telescope.builtin")
+			require('telescope').setup()
+
+			local commands = {
+				builtin.find_files,
+				builtin.live_grep,
+				builtin.buffers,
+				builtin.help_tags,
+				builtin.git_files,
+			}
+
+			for i = 1, #commands do
+				local key = keys[i]
+				local command = commands[i]
+				local description = key["desc"]
+				local keymap = key[1]
+
+				vim.keymap.set("n", keymap, command, { desc = description  })
+			end
+end
+
 return {
 	{
 		"nvim-telescope/telescope.nvim",
@@ -5,17 +35,7 @@ return {
 			"nvim-lua/plenary.nvim",
 			"nvim-telescope/telescope-fzf-native.nvim",
 		},
-		config = function ()
-			local builtin = require("telescope.builtin")
-			local map = vim.keymap.set
-
-			map("n", "<leader>ff", builtin.find_files, {})
-			map("n", "<leader>fg", builtin.live_grep, {})
-			map("n", "<leader>fb", builtin.buffers, {})
-			map("n", "<leader>fh", builtin.help_tags, {})
-			map("n", "<C-p>", builtin.git_files, {})
-
-			require('telescope').setup()
-		end,
+		keys = keys,
+		config = config,
 	},
 }
