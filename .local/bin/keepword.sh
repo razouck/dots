@@ -4,22 +4,23 @@ set -euo pipefail
 IFS=$'\n\t'
 
 text=$(xclip -o)
-file="$HOME/Documentos/formats/txt/words.txt"
+list="$HOME/Documentos/formats/txt/lists/words.txt"
 
-if [ -z "${text:-}" ]; then
+if [ -z "${text:-}" ]
+then
 	dunstify "Error: No text selected in clipboard."
 	exit 1
 fi
 
-# check if text is a link or a number
-if [[ $text =~ ^https?://|^www\.|[0-9]+$ ]]; then
+if [[ $text =~ ^https?://|^www\.|[0-9]+$ ]]
+then
 	echo "Info: Text is a link or a number. Skipping..."
 	exit 0
 fi
 
-echo "$text" >>"$file"
-sort -u -o "$file" "$file"
+echo "$text" >>"$list"
+sort -u -o "$list" "$list"
 
-file=$(basename "$file")
+list=$(basename "$list")
 
-dunstify "Added to $file" "$text"
+dunstify "Added to $list" "$text"
