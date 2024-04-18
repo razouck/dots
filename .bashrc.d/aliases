@@ -137,8 +137,8 @@ alias rstudio="rstudio-daily-bin"
 #--------------------------------------------------------------------------------
 #------------------------------------ Text --------------------------------------
 #--------------------------------------------------------------------------------
-alias money="$ed ~/Documentos/formats/text/md/money.md"
-alias todo="$ed ~/Documentos/formats/text/txt/lists/todo.md"
-alias notodo="$ed ~/Documentos/formats/text/txt/lists/notodo.md"
+alias money="$ed ~/Documentos/tasks/money.md"
+alias todo="$ed ~/Documentos/tasks/todo.md"
+alias notodo="$ed ~/Documentos/tasks/notodo.md"
 
 # vim: ft=bash
