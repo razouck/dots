@@ -101,6 +101,21 @@ function jw()
 	command "$ed" "$file"
 }
 
+function lf()
+{
+	local tmp="$(mktemp)"
+
+	command lf -last-dir-path="$tmp" "$@"
+
+	if [ -f "$tmp" ]
+	then
+		local dir="$(cat "$tmp")"
+
+		rm -f "$tmp"
+		[ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
+	fi
+}
+
 function mcd()
 {
 	mkdir -p "$1"
@@ -130,37 +145,6 @@ function playlist()
 	fi > /dev/null 2>&1
 	#  `disown` and the `dev` thingy are used so that this funciton has no
 	#+ output whatsoever. Never.
-}
-
-function ranger()
-{
-	local tmp="$(mktemp -t "ranger_cd.XXXXXXXXXX")"
-
-	command ranger --choosedir="$tmp" -- "${@:-$PWD}"
-
-	if [ -f "$tmp" ]
-	then
-		dir="$(cat -- "$tmp")"
-
-		[ -n "$dir" ] && [ "$dir" != "$PWD" ] && cd "$dir"
-
-		rm -f -- "$tmp"
-	fi
-}
-
-function ya()
-{
-	local tmp="$(mktemp)"
-
-	command yazi "$@" --cwd-file="$tmp"
-
-	if [ -f "$tmp" ]
-	then
-		dir="$(cat "$tmp")"
-
-		rm -f "$tmp"
-		[ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
-	fi
 }
 
 # vim: ft=bash
