@@ -11,8 +11,8 @@ volume_left=100
 volume_right=100
 
 [qtui]
-player_height=1028
-player_width=1886
+player_height=1022
+player_width=1882
 
 [search-tool]
 path=/home/jaboi/Arquivo/Músicas
