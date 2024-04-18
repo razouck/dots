@@ -1,3 +1,4 @@
+
 local keys = {
 	{ "<leader>a", desc = "Add file to harpoon"             },
 	{ "<C-e>"    , desc = "Open harpoon window"             },
@@ -12,11 +13,14 @@ local keys = {
 }
 -- Note: Remap `:e #` first, as <C-6>, by default, triggers it.
 
-local plugin  = { "ThePrimeagen/harpoon" }
+--------------------------------------------------------------------------------
 
-plugin.branch = "harpoon2"
-plugin.keys   = keys
-plugin.config = function()
+local M  = { "ThePrimeagen/harpoon" }
+
+M.branch = "harpoon2"
+M.keys   = keys
+
+M.config = function()
 
 	local harpoon = require("harpoon")
 	local list    = harpoon:list()
@@ -47,4 +51,6 @@ plugin.config = function()
 	end
 end
 
-return plugin
+--------------------------------------------------------------------------------
+
+return M
