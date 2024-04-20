@@ -15,6 +15,7 @@
 #--------------------------------------------------------------------------------
 ed="nvim"
 
+
 function cdown()
 {
 	N=$1
@@ -80,6 +81,24 @@ function group_files()
 		mkdir $folder
 		mv $files $folder
 	done
+}
+
+# i use arch btw
+function i()
+{
+	if [[ "$1" == "use" ]]
+	then
+		if [[ "$2" == "arch" ]] && [[ "$3" == "btw" ]]
+		then
+			fastfetch
+		else
+			# TODO: change this to say "no you don't lmao" if the user uses
+			# another distro
+			command i
+		fi
+	else
+		command i
+	fi
 }
 
 function jr()
