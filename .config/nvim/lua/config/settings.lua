@@ -1,38 +1,51 @@
+
 local g                      = vim.g
-local opt                    = vim.opt
+local o                      = vim.o
 
-opt.background               = "light"  -- Set light background.
-opt.pumblend                 = 30       -- Enable transparency in popup menus.
-opt.termguicolors            = true     -- Enable true terminal colors.
+-- Colors
+o.background                 = "light" -- Set light background.
+o.pumblend                   = 30      -- Enable transparency in popup menus.
+o.termguicolors              = true    -- Enable true terminal colors.
 
-opt.cursorcolumn             = true     -- Highlight cursor column.
-opt.cursorline               = true     -- Highlight cursor line.
-opt.guicursor                = ""       -- Always use a fat cursor.
+-- Cursor
+o.cursorcolumn               = true    -- Highlight cursor column.
+o.cursorline                 = true    -- Highlight cursor line.
+o.guicursor                  = ""      -- Always use the block cursor.
 
-g.mapleader                  = " "      -- Set spacebar as <leader> key.
-g.maplocalleader             = "\\"
+-- Indentation
+g.markdown_recommended_style = 0       -- Allow tabs to be used in Markdown.
+g.python_recommended_style   = 0       -- Allow tabs to be used in Python.
+o.expandtab                  = false   -- Use tabs only.
+o.shiftwidth                 = 4       -- Set tab size.
+o.smartindent                = true    -- Enable smart indentation.
+o.softtabstop                = 0       -- Don't move with spaces with <Tab>.
+o.tabstop                    = 4       -- Amount of spaces inserted by tabs.
 
-g.markdown_recommended_style = 0        -- Allow tabs to be used in Markdown.
-g.python_recommended_style   = 0        -- Allow tabs to be used in Python.
-opt.expandtab                = false    -- Use tabs only.
-opt.shiftwidth               = 4        -- Set tab size.
-opt.smartindent              = true     -- Enable smart indentation.
-opt.softtabstop              = 0        -- Don't move with spaces with <Tab>.
-opt.tabstop                  = 4        -- Amount of spaces inserted by tabs.
+-- Line wrapping
+o.wrap                       = false   -- Disable line wrapping.
 
-opt.mouse                    = "a"      -- Always allow mouse usage.
+-- Mouse
+o.mouse                      = "a"     -- Always allow mouse usage.
 
-opt.number                   = true     -- Show the current line number.
-opt.relativenumber           = true     -- Enable relative numbering of lines.
+-- Numbers
+o.number                     = true    -- Show the current line number.
+o.relativenumber             = true    -- Enable relative numbering of lines.
 
-opt.colorcolumn              = "81,120" -- Draw two rulers.
+-- Rulers
+o.colorcolumn                = "81"    -- Draw a ruler.
 
-opt.incsearch                = true     -- Live search pattern matching.
+-- Search
+o.incsearch                  = true    -- Live search pattern matching.
+o.ignorecase                 = true    --  Ignore upper case when searching
+o.smartcase                  = true    --+ with lower case; don't otherwise.
 
-opt.splitbelow               = true     -- Put new window below the current one.
-opt.splitright               = true     -- Put new window to the right.
+-- Splits
+o.splitbelow                 = true    -- Put new view below the current one.
+o.splitright                 = true    -- Put new view to the right.
 
-opt.undofile                 = true     -- Save undo history for later usage.
-opt.undolevels               = 10000    -- Set maximum amount of undos.
+-- Start Message
+o.shortmess                  = "filnxtToOI" -- Disable intro.
 
-opt.wrap                     = false    -- Disable line wrapping.
+-- Undo
+o.undofile                   = true    -- Save undo history for later usage.
+o.undolevels                 = 10000   -- Set maximum amount of undos.
