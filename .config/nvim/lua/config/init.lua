@@ -1,4 +1,5 @@
-require("config.settings")
-require("config.keymaps")
 require("config.lazy")
-require("config.visible-spaces")
+require("config.settings")
+require("config.commands")
+require("config.keymaps")
+require("config.show_spaces")
