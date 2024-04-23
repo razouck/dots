@@ -1,5 +1,5 @@
 
-local emoji                           = require("utils").random_emoji()
+local emoji                           = require("utils.emoji").random_emoji()
 local settings                        = {}
 
 settings.extensions                   = {}
