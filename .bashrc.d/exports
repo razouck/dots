@@ -39,6 +39,4 @@ export HISTCONTROL="ignoredups:erasedups:ignorespace"
 
 PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
-RANGER_LOAD_DEFAULT_RC=false
-
 # vim: ft=bash
