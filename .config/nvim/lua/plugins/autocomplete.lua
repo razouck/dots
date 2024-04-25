@@ -82,6 +82,7 @@ local function auto_complete_settings()
 		},
 		{
 			{ name = "buffer" },
+			{ name = "emoji"},
 		}),
 
 		sorting = defaults.sorting,
@@ -99,6 +100,7 @@ return {
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-path",
+			"hrsh7th/cmp-emoji",
 		},
 		opts = auto_complete_settings,
 		keys = auto_complete_keys,
