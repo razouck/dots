@@ -4,12 +4,13 @@
 		"os",
 		"kernel",
 		"host",
-		"locale",
 		"de",
 		"shell",
 		"packages",
 		"uptime",
+		"locale",
 		"break",
+
 		"cpu",
 		"disk",
 		"memory",
@@ -20,6 +21,7 @@
 		"poweradapter",
 		"localip",
 		"break",
+
 		"wm",
 		"wmtheme",
 		"font",
@@ -28,6 +30,7 @@
 		"icons",
 		"theme",
 		"break",
+
 		"colors"
 	]
 }
